@@ -1,3 +1,3 @@
 ## 1.0.0
 
-* Development of countdown_timer.
+* Development of smart_countdown.

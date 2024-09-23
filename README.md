@@ -40,7 +40,7 @@ Add the following line to your `pubspec.yaml` file under `dependencies`:
 
 ```yaml
 dependencies:
-  countdown_timer: ^1.0.0
+  smart_countdown: ^1.0.0
 ```
 
 Then, run the following command:
@@ -55,8 +55,8 @@ If you're using this plugin locally (during development), add the path to the pl
 
 ```yaml
 dependencies:
-  countdown_timer:
-    path: ../countdown_timer
+  smart_countdown:
+    path: ../smart_countdown
 ```
 
 ## Usage
@@ -64,7 +64,7 @@ dependencies:
 To use the plugin in your Flutter app, import the package and use the `CountdownWidget` widget:
 
 ```dart
-import 'package:countdown_timer/countdown_timer.dart';
+import 'package:smart_countdown/smart_countdown.dart';
 
 class MyHomePage extends StatelessWidget {
   @override
@@ -126,7 +126,7 @@ class MyHomePage extends StatelessWidget {
 
 ```dart
 import 'package:flutter/material.dart';
-import 'package:countdown_timer/countdown_timer.dart';
+import 'package:smart_countdown/smart_countdown.dart';
 
 class CountdownPage extends StatelessWidget {
   @override
@@ -151,7 +151,7 @@ class CountdownPage extends StatelessWidget {
 
 ```dart
 import 'package:flutter/material.dart';
-import 'package:countdown_timer/countdown_timer.dart';
+import 'package:smart_countdown/smart_countdown.dart';
 
 class CustomCountdownPage extends StatelessWidget {
   @override
@@ -180,7 +180,7 @@ class CustomCountdownPage extends StatelessWidget {
 
 ```dart
 import 'package:flutter/material.dart';
-import 'package:countdown_timer/countdown_timer.dart';
+import 'package:smart_countdown/smart_countdown.dart';
 
 class DaysCountdownPage extends StatelessWidget {
   @override

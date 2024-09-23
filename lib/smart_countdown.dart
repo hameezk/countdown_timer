@@ -1,4 +1,4 @@
-library countdown_timer;
+library smart_countdown;
 
 import 'package:flutter/material.dart';
 

@@ -1,5 +1,5 @@
 name: example
-description: "countdown_timer example."
+description: "smart_countdown example."
 publish_to: "none"
 version: 1.0.0+1
 
@@ -11,7 +11,7 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.6
-  countdown_timer:
+  smart_countdown:
     path: ../
 
 dev_dependencies:

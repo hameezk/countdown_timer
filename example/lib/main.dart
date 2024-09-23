@@ -1,5 +1,5 @@
-import 'package:countdown_timer/countdown_timer.dart';
 import 'package:flutter/material.dart';
+import 'package:smart_countdown/smart_countdown.dart';
 
 void main() {
   runApp(const MyApp());
