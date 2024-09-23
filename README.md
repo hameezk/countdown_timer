@@ -25,7 +25,7 @@ Add the following line to your `pubspec.yaml` file under `dependencies`:
 
 ```yaml
 dependencies:
-  countdown_timer_plugin: ^1.0.0
+  countdown_timer: ^1.0.0
 ```
 
 Then, run the following command:
@@ -40,16 +40,16 @@ If you're using this plugin locally (during development), add the path to the pl
 
 ```yaml
 dependencies:
-  countdown_timer_plugin:
-    path: ../countdown_timer_plugin
+  countdown_timer:
+    path: ../countdown_timer
 ```
 
 ## Usage
 
-To use the plugin in your Flutter app, import the package and use the `showSpinCountDown` widget:
+To use the plugin in your Flutter app, import the package and use the `CountdownWidget` widget:
 
 ```dart
-import 'package:countdown_timer_plugin/countdown_timer_plugin.dart';
+import 'package:countdown_timer/countdown_timer.dart';
 
 class MyHomePage extends StatelessWidget {
   @override
@@ -73,7 +73,7 @@ class MyHomePage extends StatelessWidget {
 }
 ```
 
-### `showSpinCountDown` Parameters
+### `CountdownWidget` Parameters
 
 | Parameter         | Type           | Default               | Description                                                                 |
 |-------------------|----------------|-----------------------|-----------------------------------------------------------------------------|
@@ -111,7 +111,7 @@ class MyHomePage extends StatelessWidget {
 
 ```dart
 import 'package:flutter/material.dart';
-import 'package:countdown_timer_plugin/countdown_timer_plugin.dart';
+import 'package:countdown_timer/countdown_timer.dart';
 
 class CountdownPage extends StatelessWidget {
   @override
@@ -136,7 +136,7 @@ class CountdownPage extends StatelessWidget {
 
 ```dart
 import 'package:flutter/material.dart';
-import 'package:countdown_timer_plugin/countdown_timer_plugin.dart';
+import 'package:countdown_timer/countdown_timer.dart';
 
 class CustomCountdownPage extends StatelessWidget {
   @override
@@ -165,7 +165,7 @@ class CustomCountdownPage extends StatelessWidget {
 
 ```dart
 import 'package:flutter/material.dart';
-import 'package:countdown_timer_plugin/countdown_timer_plugin.dart';
+import 'package:countdown_timer/countdown_timer.dart';
 
 class DaysCountdownPage extends StatelessWidget {
   @override
