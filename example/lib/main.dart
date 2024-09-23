@@ -8,7 +8,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
@@ -30,7 +29,7 @@ class MyHomePage extends StatelessWidget {
         title: const Text("Countdown Timer Example"),
       ),
       body: Center(
-        child: showSpinCountDown(
+        child: CountdownWidget(
           endDate,
           completedText: "Countdown Complete!",
           timerStyle: const TextStyle(fontSize: 18, color: Colors.red),

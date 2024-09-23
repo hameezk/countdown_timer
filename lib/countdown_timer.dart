@@ -2,13 +2,26 @@ library countdown_timer;
 
 import 'package:flutter/material.dart';
 
-Widget showSpinCountDown(
-  DateTime endDate, {
-  String? completedText,
-  TextStyle? timerStyle,
-  Color? timerColor,
-  bool? hideZeroValues = true,
-}) {
+class CountdownWidget extends StatefulWidget {
+  final DateTime endDate;
+  final String? completedText;
+  final TextStyle? timerStyle;
+  final Color? timerColor;
+  final bool? hideZeroValues;
+  const CountdownWidget(
+    this.endDate, {
+    super.key,
+    this.completedText,
+    this.timerStyle,
+    this.timerColor,
+    this.hideZeroValues = true,
+  });
+
+  @override
+  State<CountdownWidget> createState() => _CountdownWidgetState();
+}
+
+class _CountdownWidgetState extends State<CountdownWidget> {
   Stream<int> timerStream(DateTime endTime) async* {
     while (endTime.isAfter(DateTime.now())) {
       yield endTime.difference(DateTime.now()).inSeconds;
@@ -20,7 +33,7 @@ Widget showSpinCountDown(
     String result = '';
     String twoDigits(int n) => n.toString().padLeft(2, '0');
 
-    if (hideZeroValues ?? true) {
+    if (widget.hideZeroValues ?? true) {
       if (days > 0) {
         result += '$days Days';
       }
@@ -58,45 +71,48 @@ Widget showSpinCountDown(
     return formatDuration(days, hours, minutes, seconds);
   }
 
-  return StreamBuilder<int>(
-    stream: timerStream(endDate),
-    builder: (BuildContext context, AsyncSnapshot<int> snapshot) {
-      if (snapshot.connectionState == ConnectionState.done) {
-        return Text(
-          completedText ?? 'Time Completed!',
-          style: timerStyle ??
-              TextStyle(
-                  fontSize: 14,
-                  color: timerColor ?? Colors.grey,
-                  fontWeight: FontWeight.w700),
-        );
-      } else {
-        if (snapshot.hasData) {
-          return Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(
-                formatTime(snapshot.data ?? 0),
-                style: timerStyle ??
-                    TextStyle(
-                        fontSize: 14,
-                        color: timerColor ?? Colors.grey,
-                        fontWeight: FontWeight.w700),
-              ),
-            ],
-          );
-        } else {
+  @override
+  Widget build(BuildContext context) {
+    return StreamBuilder<int>(
+      stream: timerStream(widget.endDate),
+      builder: (BuildContext context, AsyncSnapshot<int> snapshot) {
+        if (snapshot.connectionState == ConnectionState.done) {
           return Text(
-            '00:00:00',
-            style: timerStyle ??
+            widget.completedText ?? 'Time Completed!',
+            style: widget.timerStyle ??
                 TextStyle(
                     fontSize: 14,
-                    color: timerColor ?? Colors.grey,
+                    color: widget.timerColor ?? Colors.grey,
                     fontWeight: FontWeight.w700),
           );
+        } else {
+          if (snapshot.hasData) {
+            return Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  formatTime(snapshot.data ?? 0),
+                  style: widget.timerStyle ??
+                      TextStyle(
+                          fontSize: 14,
+                          color: widget.timerColor ?? Colors.grey,
+                          fontWeight: FontWeight.w700),
+                ),
+              ],
+            );
+          } else {
+            return Text(
+              '00:00:00',
+              style: widget.timerStyle ??
+                  TextStyle(
+                      fontSize: 14,
+                      color: widget.timerColor ?? Colors.grey,
+                      fontWeight: FontWeight.w700),
+            );
+          }
         }
-      }
-    },
-  );
+      },
+    );
+  }
 }

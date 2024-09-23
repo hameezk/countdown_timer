@@ -61,7 +61,7 @@ class MyHomePage extends StatelessWidget {
         title: Text("Countdown Timer Example"),
       ),
       body: Center(
-        child: showSpinCountDown(
+        child: CountdownWidget(
           endDate,
           completedText: "Countdown Complete!",
           timerStyle: TextStyle(fontSize: 18, color: Colors.blue),
@@ -123,7 +123,7 @@ class CountdownPage extends StatelessWidget {
         title: Text("Basic Countdown Timer"),
       ),
       body: Center(
-        child: showSpinCountDown(
+        child: CountdownWidget(
           endDate,
         ),
       ),
@@ -147,12 +147,12 @@ class CustomCountdownPage extends StatelessWidget {
       appBar: AppBar(
         title: Text("Customized Countdown Timer"),
       ),
-      body: Center(
-        child: showSpinCountDown(
+      body:Center(
+        child: CountdownWidget(
           endDate,
-          completedText: "The wait is over!",
-          timerStyle: TextStyle(fontSize: 24, fontWeight: FontWeight.w600, color: Colors.purple),
-          timerColor: Colors.green,
+          completedText: "Countdown Complete!",
+          timerStyle: const TextStyle(fontSize: 18, color: Colors.red),
+          timerColor: Colors.red,
           hideZeroValues: true,
         ),
       ),
@@ -176,12 +176,13 @@ class DaysCountdownPage extends StatelessWidget {
       appBar: AppBar(
         title: Text("Countdown Timer with Days"),
       ),
-      body: Center(
-        child: showSpinCountDown(
+      body:Center(
+        child: CountdownWidget(
           endDate,
-          completedText: "One Week is Over!",
-          timerStyle: TextStyle(fontSize: 20, color: Colors.blueGrey),
-          timerColor: Colors.redAccent,
+          completedText: "Countdown Complete!",
+          timerStyle: const TextStyle(fontSize: 18, color: Colors.red),
+          timerColor: Colors.red,
+          hideZeroValues: true,
         ),
       ),
     );
