@@ -3,6 +3,21 @@
 
 A Flutter plugin to display a customizable countdown timer widget that counts down to a specific `endDate`. The plugin supports text customization, color options, and auto-refreshing every second.
 
+## Demo
+- MacOS
+  
+https://github.com/user-attachments/assets/c4f100c6-2d42-4f19-aa4e-f3821623769d
+
+- Web
+  
+https://github.com/user-attachments/assets/6c218998-ac94-44ea-8ca0-fba6576dbf22
+
+- IOS
+  
+https://github.com/user-attachments/assets/a96d6c35-5b32-4d4d-8671-f377beea85bc
+
+
+
 ## Features
 
 - Displays a countdown timer.
