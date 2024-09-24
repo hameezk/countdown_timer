@@ -1,6 +1,6 @@
 name: smart_countdown
 description: "A Flutter package for a customizable countdown timer to a specific end DateTime, refreshing every second."
-version: 1.0.0
+version: 1.0.1
 homepage: "https://github.com/hameezk/countdown_timer"
 
 environment:
