@@ -1,7 +1,7 @@
 name: smart_countdown
-description: "A Flutter plugin to display a customizable countdown timer widget that counts down to a specific endDate. The plugin supports text customization, color options, and auto-refreshing every second."
+description: "A Flutter package for a customizable countdown timer to a specific end DateTime, refreshing every second."
 version: 1.0.0
-homepage: "https://nibitsolutions.com/contact-us/"
+homepage: "https://github.com/hameezk/countdown_timer"
 
 environment:
   sdk: ">=3.4.0 <4.0.0"
